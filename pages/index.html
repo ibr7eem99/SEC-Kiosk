@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC Kiosk</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="background">
+            <img class="logo-img center-item" src="../assets/svg/شعار الشركة السعودية للكهرباء.svg" />
+        </div>
+    </div>
+
+    <div class="screen-container d-none">
+        <div class="d-flex flex-column align-items-center">
+            <img style="max-width: 225px; min-height: 100px;" src="../assets/svg/شعار الشركة.svg" />
+            <section class="step-1">
+                <h6 class="step-label">اختر الخدمة التي تريدها</h6>
+                <div class="d-flex flex-column" style="gap: 16px;">
+                    <button class="print-btn" type="button">
+                        <span>طباعة بطاقة</span>
+                        <img style="max-width: 30px; min-height: 30px;" src="../assets/svg/print.svg" />
+                    </button>
+                    <button class="id-card-btn" type="button">
+                        <span>تجديد بطاقة</span>
+                        <img style="max-width: 30px; min-height: 30px;" src="../assets/svg/id-card.svg" />
+                    </button>
+                </div>
+            </section>
+
+            <section id="step-2" class="d-none">
+                <h6 class="step-label">من فضلك قم بادخال رقم الهوية الوطنية</h6>
+                <div>
+                    <div class="d-flex flex-column" style="gap: 16px;">
+                        <input type="text" class="national-id-input" inputmode="email" placeholder="رقم الهوية الوطنية"
+                            dir="rtl">
+                        <div id="national-id-validation" class="invalid-feedback text-right" dir="rtl"></div>
+                        <button class="send-request-btn" type="button">ارسال طلب</button>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button class="back-btn" type="button">
+                            <img style="max-width: 15px; min-height: 15px;" src="../assets/svg/Vector.svg" />
+                            <span>العودة</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step-3" class="d-none">
+                <div class="d-flex justify-content-center">
+                    <img width="100px" height="100px" src="../assets/images/OTP.gif">
+                </div>
+                <h6 class="step-label" style="width: 350px; line-height: 30px;">من فضلك قم بادخال رقم التحقق المرسل
+                    على رقم الجوال 0535**** لاكمال عملية طباعة البطاقة</h6>
+                <div>
+                    <form class="d-flex flex-column align-items-center" style="gap: 20px;">
+                        <div class="mobile-otp">
+                            <div class="otp-container">
+                                <input type="number" class="otp-input" pattern="\d" maxlength="1" placeholder="-">
+                                <input type="number" class="otp-input" pattern="\d" maxlength="1" disabled
+                                    placeholder="-">
+                                <input type="number" class="otp-input" pattern="\d" maxlength="1" disabled
+                                    placeholder="-">
+                                <input type="number" class="otp-input" pattern="\d" maxlength="1" disabled
+                                    placeholder="-">
+                            </div>
+                        </div>
+                        <div id="otp-validation" class="invalid-feedback text-center"></div>
+                        <span>الوقت المتبقي : <span id="time">02:30</span> دقيقة</span>
+                        <button class="re-send-btn d-none" type="button">اعادة ارسال رمز التحقق</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="step-4" class="d-none">
+                <h6 class="step-label">جاري الان طباعة البطاقة</h6>
+                <div class="progress">
+                    <div id="dynamic" class="progress-bar bg-info progress-bar-striped" role="progressbar"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                        <span id="current-progress">10% Complete</span>
+                    </div>
+                </div>
+
+                <div class="col-8 mx-auto mt-4" style="background-color: rgba(245, 243, 241, 1); padding: 16px;">
+                    <img src="../assets/images/Untitled-3 1.png" class="w-100 h-100" alt="...">
+                </div>
+            </section>
+        </div>
+
+        <section id="step-5" class="d-none">
+            <div class="splash">
+                <div class="d-flex flex-column justify-content-between">
+                    <div class="center-item">
+                        <img style="max-width: 100px; min-height: 100px;" class="d-block mb-3 mx-auto"
+                            src="../assets/svg/Outline.svg" />
+                        <h5 class="text-white">لقد تم طباعة البطاقة بنجاح</span>
+                    </div>
+
+                    <img style="max-width: 250px; min-height: 250px; position: absolute;bottom: -50px; left: 50%; right: 50%;transform: translateX(-50%);"
+                        src="../assets/svg/شعار الشركة السعودية للكهرباء.svg" />
+                </div>
+        </section>
+
+        <img class="bottom-image" src="../assets/svg/Layer1.svg" />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/site.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgba(255, 115, 0, 1);
+  --secondary-color: rgba(255, 234, 217, 1);
+}
+
+.bg-info {
+  background-color: rgba(25, 178, 153, 1) !important;
+}
+.center-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-container {
+  overflow: hidden;
+  min-width: 1280px;
+  min-height: 1024px;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.logo-img {
+  max-width: 387px;
+  max-height: 119px;
+}
+
+.main-container .background::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(var(--primary-color), rgba(255, 115, 0, 0));
+}
+
+.main-container .background {
+  background-image: url(../assets/images/mainBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+  min-width: inherit;
+  min-height: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.print-btn,
+.id-card-btn,
+.re-print-btn {
+  padding: 24px, 0px, 24px, 0px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.print-btn,
+.id-card-btn {
+  width: 300px;
+  height: 60px;
+}
+
+.re-print-btn {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+}
+
+.print-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.id-card-btn,
+.re-print-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.screen-container {
+  position: relative;
+  padding: 75px 0;
+  height: 100%;
+}
+
+.screen-container::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.screen-container::before {
+  height: 120px;
+  top: 0;
+  background-image: linear-gradient(
+    var(--primary-color),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.bottom-image {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  bottom: 0px;
+  z-index: -5;
+}
+
+.step-label {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.national-id-input {
+  border: none;
+  outline: none;
+  background-color: rgba(245, 243, 241, 1);
+  padding: 20px 18px;
+  border-radius: 10px;
+  width: 350px;
+  height: 50px;
+}
+
+.send-request-btn,
+.re-send-btn {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.send-request-btn {
+  width: 350px;
+  height: 50px;
+}
+.re-send-btn {
+  padding: 16px 32px;
+}
+.national-id-input::placeholder {
+  color: rgba(153, 153, 153, 1);
+  font-size: 16px;
+}
+
+.back-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  margin-top: 35px;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.otp-form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* OTP input styles */
+.otp-container {
+  display: flex;
+  justify-content: center;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: rgba(245, 243, 241, 1);
+}
+
+.otp-input:focus {
+  border-color: var(--primary-color);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* progress styles */
+.progress {
+  margin: 10px auto;
+  width: 300px;
+  height: 30px;
+  position: relative;
+}
+
+#current-progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: bold 14px "Quicksand", sans-serif;
+  color: #ffffff;
+}
+
+.is-invalid {
+  border: 1px solid #dc3545 !important;
+  color: #dc3545;
+}
+
+/* Animation  */
+
+.fadeDown {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-name: fadeDown;
+  -webkit-animation-name: fadeDown;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fadeOutDown {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-name: fadeOutDown;
+  -webkit-animation-name: fadeOutDown;
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fadeInDown {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+}
+
+.fadeOutUp {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-name: fadeOutUp;
+  -webkit-animation-name: fadeOutUp;
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fadeInUp {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-right {
+  animation: fade-right-in 0.5s ease-in-out; /* Adjust timing and easing as desired */
+}
+
+@keyframes fade-left-in {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.fade-left {
+  animation: fade-left-in 0.5s ease-in-out; /* Adjust timing and easing as desired */
+}
+
+.fadeUp-left {
+  opacity: 0;
+  animation: fade-up-left 2s ease-in-out;
+}
+
+@keyframes fade-up-left {
+  from {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+.splash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(25, 178, 153, 1);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  animation: splashAnimation 2s ease-out forwards;
+}
+
+@keyframes splashAnimation {
+  0% {
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    border-radius: 0;
+    transform: translate(-50%, -50%);
+  }
+}
