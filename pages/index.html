@@ -16,19 +16,19 @@
 
     <div class="main-container">
         <div class="background">
-            <img class="logo-img center-item" src="../assets/svg/شعار الشركة السعودية للكهرباء.svg" />
+            <img class="logo-img center-item" id="logo" src="../assets/svg/شعار الشركة السعودية للكهرباء.svg" />
         </div>
     </div>
 
-    <div class="screen-container d-none">
-        <div class="d-flex flex-column align-items-center">
-            <img style="max-width: 225px; min-height: 100px;" src="../assets/svg/شعار الشركة.svg" />
+    <div class="screen-container w-100 h-100 d-none">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100 w-100">
+            <img style="max-width: 321.33px; min-height: 100px" src="../assets/svg/شعار الشركة.svg" />
             <section class="step-1">
                 <h6 class="step-label">اختر الخدمة التي تريدها</h6>
                 <div class="d-flex flex-column" style="gap: 16px;">
                     <button class="print-btn" type="button">
                         <span>طباعة بطاقة</span>
-                        <img style="max-width: 30px; min-height: 30px;" src="../assets/svg/print.svg" />
+                        <img style="max-width: 55.76px; min-height: 56px;" src="../assets/svg/print.svg" />
                     </button>
                     <button class="id-card-btn" type="button">
                         <span>تجديد بطاقة</span>
@@ -60,19 +60,20 @@
                 <div class="d-flex justify-content-center">
                     <img width="100px" height="100px" src="../assets/images/OTP.gif">
                 </div>
-                <h6 class="step-label" style="width: 350px; line-height: 30px;">من فضلك قم بادخال رقم التحقق المرسل
+                <h6 class="step-label otp-label">من فضلك قم بادخال رقم التحقق المرسل
                     على رقم الجوال 0535**** لاكمال عملية طباعة البطاقة</h6>
                 <div>
                     <form class="d-flex flex-column align-items-center" style="gap: 20px;">
                         <div class="mobile-otp">
                             <div class="otp-container">
-                                <input type="number" class="otp-input" pattern="\d" maxlength="1" placeholder="-">
-                                <input type="number" class="otp-input" pattern="\d" maxlength="1" disabled
+                                <input type="number" class="otp-input otp-input-size" pattern="\d" maxlength="1"
                                     placeholder="-">
-                                <input type="number" class="otp-input" pattern="\d" maxlength="1" disabled
-                                    placeholder="-">
-                                <input type="number" class="otp-input" pattern="\d" maxlength="1" disabled
-                                    placeholder="-">
+                                <input type="number" class="otp-input otp-input-size" pattern="\d" maxlength="1"
+                                    disabled placeholder="-">
+                                <input type="number" class="otp-input otp-input-size" pattern="\d" maxlength="1"
+                                    disabled placeholder="-">
+                                <input type="number" class="otp-input otp-input-size" pattern="\d" maxlength="1"
+                                    disabled placeholder="-">
                             </div>
                         </div>
                         <div id="otp-validation" class="invalid-feedback text-center"></div>
@@ -91,7 +92,8 @@
                     </div>
                 </div>
 
-                <div class="col-8 mx-auto mt-4" style="background-color: rgba(245, 243, 241, 1); padding: 16px;">
+                <div class="col-10 col-lg-12 mx-auto mt-4"
+                    style="background-color: rgba(245, 243, 241, 1); padding: 16px;">
                     <img src="../assets/images/Untitled-3 1.png" class="w-100 h-100" alt="...">
                 </div>
             </section>
@@ -99,14 +101,14 @@
 
         <section id="step-5" class="d-none">
             <div class="splash">
-                <div class="d-flex flex-column justify-content-between">
-                    <div class="center-item">
+                <div class="center-item">
+                    <div>
                         <img style="max-width: 100px; min-height: 100px;" class="d-block mb-3 mx-auto"
                             src="../assets/svg/Outline.svg" />
                         <h5 class="text-white">لقد تم طباعة البطاقة بنجاح</span>
                     </div>
 
-                    <img style="max-width: 250px; min-height: 250px; position: absolute;bottom: -50px; left: 50%; right: 50%;transform: translateX(-50%);"
+                    <img style="max-width: 250px; top:  200px; position: relative;"
                         src="../assets/svg/شعار الشركة السعودية للكهرباء.svg" />
                 </div>
         </section>

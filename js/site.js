@@ -105,9 +105,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     $("#step-4").addClass("d-none");
                     $("#step-5").removeClass("d-none");
                     clearInterval(interval);
+
+                    setTimeout(() => {
+                        $(".main-container").removeClass("d-none");
+                        $(".screen-container").addClass("d-none");
+                        $("#logo").addClass("logoFadeOutDown");
+                    }, 3000);
                 }
             }, 1000);
-        }, 1000);
+        }, 300);
     }
 
     otpInputs[3].addEventListener("input", function () {
